@@ -15,3 +15,7 @@ It also supports stopping of the Iteration, when the Value `'break'` is being re
 
 # Tests
 Run `npm test`
+
+
+# Example Usage
+see Folder `examples`
