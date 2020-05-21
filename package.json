@@ -1,0 +1,23 @@
+{
+  "name": "improved_array",
+  "version": "1.0.0",
+  "description": "improved array functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "keywords": [
+    "js",
+    "array"
+  ],
+  "author": "Patrick P.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p85/improved_array.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mocha": "^7.0.2",
+    "mocha": "^7.1.2"
+  }
+}
