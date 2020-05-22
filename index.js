@@ -5,7 +5,7 @@ Array.prototype.forEach = function (cb) {
             break;
         }
     }
-};
+}
 
 Array.prototype.asyncForEach = async function (cb) {
     for (let i = 0; i < this.length; i++) {
@@ -15,4 +15,8 @@ Array.prototype.asyncForEach = async function (cb) {
         }
     }
     return Promise.resolve();
-};
+}
+
+Array.prototype.deduplicate = function() {
+    return [...new Set(this)];
+}

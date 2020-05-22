@@ -84,4 +84,30 @@ describe('tests', () => {
             return Promise.resolve();
         });
     });
+    describe('deduplicate', () => {
+        it('with primitive values', () => {
+            const array_1 = new Array(10000);
+            const array_2 = new Array(10000);
+            const array_3 = new Array(10000);
+            array_1.fill(1);
+            array_2.fill(2);
+            array_3.fill(3);
+            const large_arr = [].concat(array_1, array_2, array_3).concat(array_2, array_3, array_1).concat(array_3, array_1, array_2);
+            const expectedToBe = [1, 2, 3];
+            const result = large_arr.deduplicate();
+            assert.deepStrictEqual(result, expectedToBe);
+        });
+        it('with object values', () => {
+            const array_1 = new Array(10000);
+            const array_2 = new Array(10000);
+            const array_3 = new Array(10000);
+            array_1.fill({a: 'a'});
+            array_2.fill({b: 'b'});
+            array_3.fill({c: 'c'});
+            const large_arr = [].concat(array_1, array_2, array_3).concat(array_2, array_3, array_1).concat(array_3, array_1, array_2);
+            const expectedToBe = [{a: 'a'}, {b: 'b'}, {c: 'c'}];
+            const result = large_arr.deduplicate();
+            assert.deepStrictEqual(result, expectedToBe);
+        });
+    });
 });
