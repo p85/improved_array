@@ -6,7 +6,7 @@ require('../index');
     const another_array = ['Hello', 'World', 'meh'];
 
     await arr.asyncForEach(async (el, i, arr) => {
-        console.log(`arr: on iteration: {i}`);
+        console.log(`arr: on iteration: ${i}`);
         if (i === 1) {
             console.log('arr: we should exit now');
             return 'break';
@@ -18,6 +18,7 @@ require('../index');
 
     await another_array.asyncForEach(async (el, i, arr) => {
         console.log(`another_array: ${el}`);
+        return Promise.resolve();
     });
     console.log('another_array: done');
     console.log('we are done now');
