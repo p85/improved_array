@@ -1,4 +1,7 @@
 # Improved Array Functions
+[![Build Status](https://travis-ci.com/p85/improved_array.svg?branch=master)](https://travis-ci.com/p85/improved_array)
+
+
 ## Installation
 `npm install package improved_array` 
 
